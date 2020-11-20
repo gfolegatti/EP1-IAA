@@ -29,6 +29,15 @@ public class Main {
 
 				image.drawLine(scanner.nextInt(), scanner.nextInt(), scanner.nextInt(), scanner.nextInt());
 			}
+			if(command.equals("KOCH_CURVE")){
+
+				AdvancedDrawing.kochCurve(scanner.nextInt(), scanner.nextInt(),
+						scanner.nextInt(), scanner.nextInt(), scanner.nextDouble());
+			}
+			if (command.equals("REGION_FILL")){
+
+				AdvancedDrawing.regionFill(scanner.nextInt(), scanner.nextInt());
+			}
 		}
 
 		image.save(outputFileName);
