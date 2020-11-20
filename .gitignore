@@ -1,0 +1,6 @@
+# ignora os arquivos Java compilados
+*.class
+# ignora iml
+*.iml
+# ignora pasta idea
+.idea/
