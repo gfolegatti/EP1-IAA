@@ -4,3 +4,9 @@
 *.iml
 # ignora pasta idea
 .idea/
+# ignora enunciado
+*.pdf
+#ignora imagens
+*.png
+#ignora pasta de saida
+out/
