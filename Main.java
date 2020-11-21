@@ -10,7 +10,6 @@ public class Main {
 		Scanner scanner = new Scanner(new File(inputFileName));
 
 		ImageEx image = new ImageEx(scanner.nextInt(), scanner.nextInt(), scanner.nextInt(), scanner.nextInt(), scanner.nextInt());
-	
 		while(scanner.hasNext()){
 
 			String command = scanner.next();
@@ -31,12 +30,12 @@ public class Main {
 			}
 			if(command.equals("KOCH_CURVE")){
 
-				AdvancedDrawing.kochCurve(scanner.nextInt(), scanner.nextInt(),
-						scanner.nextInt(), scanner.nextInt(), scanner.nextDouble());
+				image.kochCurve(scanner.nextInt(), scanner.nextInt(),
+						scanner.nextInt(), scanner.nextInt(), scanner.nextInt());
 			}
 			if (command.equals("REGION_FILL")){
 
-				AdvancedDrawing.regionFill(scanner.nextInt(), scanner.nextInt());
+				image.regionFill(scanner.nextInt(), scanner.nextInt(), scanner.nextInt());
 			}
 		}
 
