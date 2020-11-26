@@ -1,3 +1,9 @@
+/**
+ * Gabriel Folegatti Santana 9911506
+ * EP1-IAA
+ **/
+
+import java.awt.*;
 import java.util.*;
 import java.io.*;
 
@@ -5,59 +11,60 @@ import java.io.*;
 
 public class Main {
 
-	public static void generateImage(String inputFileName, String outputFileName) throws IOException {
+    public static void generateImage(String inputFileName, String outputFileName) throws IOException {
 
-		Scanner scanner = new Scanner(new File(inputFileName));
+        Scanner scanner = new Scanner(new File(inputFileName));
 
-		ImageEx image = new ImageEx(scanner.nextInt(), scanner.nextInt(), scanner.nextInt(), scanner.nextInt(), scanner.nextInt());
-		while(scanner.hasNext()){
+        ImageEx image = new ImageEx(scanner.nextInt(), scanner.nextInt(), scanner.nextInt(), scanner.nextInt(), scanner.nextInt());
+        while (scanner.hasNext()) {
 
-			String command = scanner.next();
+            String command = scanner.next();
 
-			if(command.equals("SET_COLOR")){
+            if (command.equals("SET_COLOR")) {
 
-				image.setColor(scanner.nextInt(), scanner.nextInt(), scanner.nextInt());
-			}
+                image.setColor(scanner.nextInt(), scanner.nextInt(), scanner.nextInt());
+            }
 
-			if(command.equals("SET_PIXEL")){
+            if (command.equals("SET_PIXEL")) {
 
-				image.setPixel(scanner.nextInt(), scanner.nextInt());
-			}
+                image.setPixel(scanner.nextInt(), scanner.nextInt());
+            }
 
-			if(command.equals("DRAW_LINE")){
+            if (command.equals("DRAW_LINE")) {
 
-				image.drawLine(scanner.nextInt(), scanner.nextInt(), scanner.nextInt(), scanner.nextInt());
-			}
-			if(command.equals("KOCH_CURVE")){
+                image.drawLine(scanner.nextInt(), scanner.nextInt(), scanner.nextInt(), scanner.nextInt());
+            }
+            if (command.equals("KOCH_CURVE")) {
 
-				image.kochCurve(scanner.nextInt(), scanner.nextInt(),
-						scanner.nextInt(), scanner.nextInt(), scanner.nextInt());
-			}
-			if (command.equals("REGION_FILL")){
+                image.kochCurve(scanner.nextInt(), scanner.nextInt(),
+                        scanner.nextInt(), scanner.nextInt(), scanner.nextInt());
+            }
+            if (command.equals("REGION_FILL")) {
+                int x = scanner.nextInt();
+                int y = scanner.nextInt();
+                image.setColor(new Color(109, 152, 232));
+                image.regionFill(x, y, image.getPixel(x, y));
+            }
+        }
 
-				image.regionFill(scanner.nextInt(), scanner.nextInt(), scanner.nextInt());
-			}
-		}
+        image.save(outputFileName);
+    }
 
-		image.save(outputFileName);
-	}
-
-	public static void main(String [] args){
+    public static void main(String[] args) {
 
 
-		if(args.length != 2){
-	
-			System.out.println("Uso: java " + Main.class.getName() + " entrada.txt saida.png");
-			System.exit(1);
-		}
+        if (args.length != 2) {
 
-		try{
-			generateImage(args[0], args[1]);
-		}
-		catch(IOException e){
-			
-			System.out.println("Problem generating image... :(");
-			e.printStackTrace();
-		}
-	}
+            System.out.println("Uso: java " + Main.class.getName() + " entrada.txt saida.png");
+            System.exit(1);
+        }
+
+        try {
+            generateImage(args[0], args[1]);
+        } catch (IOException e) {
+
+            System.out.println("Problem generating image... :(");
+            e.printStackTrace();
+        }
+    }
 }
