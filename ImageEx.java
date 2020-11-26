@@ -1,4 +1,9 @@
-// Esqueleto da classe na qual devem ser implementadas as novas funcionalidades de desenho
+/** Esqueleto da classe na qual devem ser implementadas as novas funcionalidades de desenho
+ * Gabriel Folegatti Santana 9911506
+ * EP1-IAA
+ **/
+
+import java.awt.*;
 
 public class ImageEx extends Image {
 
@@ -61,6 +66,19 @@ public class ImageEx extends Image {
     }
 
     public void regionFill(int x, int y, int reference_rgb) {
+        if (!(reference_rgb == getPixel(x, y))) {
+            return;
+        }
+
+        setPixel(x, y);
+        if (x + 1 < getWidth())
+            regionFill(x + 1, y, reference_rgb);
+        if (x - 1 >= 0)
+            regionFill(x - 1, y, reference_rgb);
+        if (y + 1 < getHeight())
+            regionFill(x, y + 1, reference_rgb);
+        if (y - 1 >= 0)
+            regionFill(x, y - 1, reference_rgb);
 
     }
 
