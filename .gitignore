@@ -10,3 +10,5 @@
 *.png
 #ignora pasta de saida
 out/
+#ignora as entradas
+.txt
