@@ -73,10 +73,10 @@ public class ImageEx extends Image {
         setPixel(x, y);
         if (x + 1 < getWidth())
             regionFill(x + 1, y, reference_rgb);
-        if (x - 1 >= 0)
-            regionFill(x - 1, y, reference_rgb);
         if (y + 1 < getHeight())
             regionFill(x, y + 1, reference_rgb);
+        if (x - 1 >= 0)
+            regionFill(x - 1, y, reference_rgb);
         if (y - 1 >= 0)
             regionFill(x, y - 1, reference_rgb);
 
