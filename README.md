@@ -1,7 +1,7 @@
 # EP1-IAA
 
 ### Gabriel Folegatti Santana 9911506
-
+### repositório git: https://github.com/gfolegatti/EP1-IAA
 ######Este projeto é designado a aula de Introdução a Análise de Algoritmos (ACH2002), ministrada pelo professor Dr. Flávio Coutinho no 2º semestre de 2020.
 
 A classe Image.java já foi fornecida e não foi modificada. As classes Main.java e ImageEx.java foram fornecidas mas
@@ -43,3 +43,18 @@ por setColor() na classe Main.java, na linha 40.
 Dentro do método regionFill, a checagem de parada é apenas se o pixel atual é da mesma cor do que o fundo inicial, 
 caso não ele para a pintura naquele local. Caso contrário ele irá pintar o atual e chamar recursivamente
 para os quatro vizinhos.
+
+####### testes
+As entradas selecionadas estão aí. A 1,2 e 3 foram entregues pelo professor, algumas foram criadas por mim e outras
+foram disponibilizadas entre os alunos para testes, por isto haverá algumas semelhanças com outros trabalhos. A entrada
+9 estourou a memória, apesar da alocação utilizando o comando -Xss250M, não consegui resolver aqui. No meu computador
+não foi possível alocar muito mais memória para rodar pois o S.O não permitia. Utilizo notebook do serviço.
+
+### Compilação 
+É necessário compilar a classe Main.java, Image.java e ImageEx.java no programa. 
+    `javac Main.java` 
+    `javac Image.java` 
+    `javac ImageEx.java`
+
+E após isto rodar, passando os parâmetros segundo foi orientado:
+    `java ProgPrincipal entrada.txt saida.png`
