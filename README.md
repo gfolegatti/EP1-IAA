@@ -44,7 +44,7 @@ Dentro do método regionFill, a checagem de parada é apenas se o pixel atual é
 caso não ele para a pintura naquele local. Caso contrário ele irá pintar o atual e chamar recursivamente
 para os quatro vizinhos.
 
-####### testes
+### Testes
 As entradas selecionadas estão aí. A 1,2 e 3 foram entregues pelo professor, algumas foram criadas por mim e outras
 foram disponibilizadas entre os alunos para testes, por isto haverá algumas semelhanças com outros trabalhos. A entrada
 9 estourou a memória, apesar da alocação utilizando o comando -Xss250M, não consegui resolver aqui. No meu computador
